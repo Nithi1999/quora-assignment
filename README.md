@@ -1,4 +1,5 @@
-# quora-assignment
+# Quora Assignment
+
 This is a Django-based web application inspired by Quora. It allows users to register, log in, post questions, view and answer questions, like answers, and delete their own questions.
 
 ## Tech Stack
@@ -26,7 +27,7 @@ This is a Django-based web application inspired by Quora. It allows users to reg
 1. **Clone the Repository**:
    ```bash
    git clone <repository-url>
-   cd assignment
+   cd project
 
 2. **Set Up Virtual Environment**:
     ```bash
@@ -39,7 +40,7 @@ This is a Django-based web application inspired by Quora. It allows users to reg
 
 4. **Apply Migrations**:
     ```bash
-    python3 manage.py makemigrations
+    python3 manage.py makemigrations quora_app
     python3 manage.py migrate
 
 5. **Run the Server**:
