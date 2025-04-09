@@ -1,0 +1,20 @@
+<h2>{{ question.question }}</h2>
+<p>Posted by {{ question.user.username }}</p>
+<h3>Answers</h3>
+<ul>
+{% for answer in answers %}
+    <li>
+        {{ answer.content }} (by {{ answer.user.username }})
+        <a href="{% url 'like_answer' answer.id %}">
+            {% if request.user in answer.like_set.all %}Unlike{% else %}Like{% endif %}
+        </a> ({{ answer.like_set.count }} likes)
+    </li>
+{% endfor %}
+</ul>
+<h3>Add an Answer</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+<a href="{% url 'question_list' %}">Back to Questions</a>
